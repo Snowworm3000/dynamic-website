@@ -11,6 +11,27 @@
 <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js"></script>
 
 <script>
+  function saveToFirebase(email) {
+    var emailObject = {
+        email: email
+    };
+
+    firebase.database().ref('subscription-entries').push().set(emailObject)
+        .then(function(snapshot) {
+            success(); // some success method
+        }, function(error) {
+            console.log('error' + error);
+            error(); // some error method
+        });
+}
+
+saveToFirebase(email);
+  
+  
+  
+  
+  
+  
   // Your web app's Firebase configuration
   var firebaseConfig = {
     apiKey: "AIzaSyAKAo9pW3dv9dZ5JIk6a-rmtlqiKwz-e0c",
