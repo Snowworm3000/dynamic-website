@@ -10,7 +10,15 @@
      https://firebase.google.com/docs/web/setup#available-libraries -->
 <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js"></script>
 
+    
 <script>
+  // Initialize Cloud Firestore through Firebase
+firebase.initializeApp({
+  apiKey: '### FIREBASE API KEY ###',
+  authDomain: '### FIREBASE AUTH DOMAIN ###',
+  projectId: '### CLOUD FIRESTORE PROJECT ID ###'
+});
+
   var db = firebase.firestore();
 
 db.collection("users").add({
