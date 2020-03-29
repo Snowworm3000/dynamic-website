@@ -11,6 +11,8 @@
 <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js"></script>
 
 <script>
+  var db = firebase.firestore();
+
 db.collection("users").add({
     first: "Ada",
     last: "Lovelace",
